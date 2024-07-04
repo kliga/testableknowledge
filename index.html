@@ -1,5 +1,46 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html>
-<head></head>
+<head>
+  <title>Testable knowledge</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 <body>
-The main idea of the project is to accumulate knowledge about software that can be verified by asking questions to a neural network and invoking a script that will check for the presence of files, lines of code, build rules, etc.
-</body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Testable knowledge</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="about" style="text-align: center; border: 2px solid black;  width: 130px">AOSP</a></li>      
+        <li><a href="about" style="text-align: center; border: 2px solid black;  width: 130px">Donation</a></li>          
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<script>
+	function exit()
+	{
+		data = {};
+		fetch('ajax_exit.php', {
+			method: 'PUT', 
+			headers: {
+			'Content-Type': 'application/json' 	
+		},
+			body: JSON.stringify(data)// В теле запроса преобразуем объект в JSON и передаем во внутрь
+		}).then(response => response.json())
+		  .then(result =>  window.location.reload());
+	}
+  </script>
